@@ -1,0 +1,9 @@
+[{
+  "status": "partial_error",
+  "sourceUrl": "feng0928/coinglass-heatmap",
+  "warnings": [
+    "Input validation failed: 1 validation error for ActorInput\nsourceUrl\n  Input should be a valid URL, relative URL without a base [type=url_parsing, input_value='feng0928/coinglass-heatmap', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/url_parsing"
+  ],
+  "files": {},
+  "monetizationEvents": []
+}]
