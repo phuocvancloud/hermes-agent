@@ -1,0 +1,195 @@
+[{
+  "status": "success",
+  "sourceUrl": "https://apify.com/feng0928/coinglass-heatmap",
+  "sourceType": "apify_actor",
+  "skillName": "coinglass_heatmap",
+  "title": "Coinglass Heatmap",
+  "summary": "Coinglass Heatmap",
+  "confidence": 0.95,
+  "detectedCapabilities": [
+    "Trading analysis: monitor liquidation levels for potential price reversals",
+    "Market research: track liquidation distribution across different timeframes"
+  ],
+  "detectedInputs": [
+    {
+      "name": "coin",
+      "type": "string",
+      "description": "Cryptocurrency symbol (e.g., BTC, ETH, SOL)",
+      "required": false,
+      "default": "BTC"
+    },
+    {
+      "name": "exchange",
+      "type": "string",
+      "description": "Exchange name",
+      "required": false,
+      "default": "Binance"
+    },
+    {
+      "name": "quoteCurrency",
+      "type": "string",
+      "description": "Quote currency for the trading pair",
+      "required": false,
+      "default": "USDT"
+    },
+    {
+      "name": "timeRange",
+      "type": "string",
+      "description": "Time range for the heatmap",
+      "required": false,
+      "default": "24h"
+    },
+    {
+      "name": "headless",
+      "type": "boolean",
+      "description": "Run browser in headless mode",
+      "required": false,
+      "default": true
+    }
+  ],
+  "detectedOutputs": [
+    {
+      "name": "dataset_items",
+      "type": "array",
+      "description": "Items produced by the Apify Actor run.",
+      "required": false,
+      "default": null
+    }
+  ],
+  "toolCallContract": {
+    "platform": "apify",
+    "actorSlug": "feng0928/coinglass-heatmap",
+    "apiActorId": "feng0928~coinglass-heatmap",
+    "runEndpoint": "https://api.apify.com/v2/acts/feng0928~coinglass-heatmap/runs",
+    "runSyncEndpoint": "https://api.apify.com/v2/acts/feng0928~coinglass-heatmap/run-sync-get-dataset-items",
+    "requiresSecret": "APIFY_TOKEN",
+    "inputSchemaSource": "apify_actor_metadata",
+    "resultHandling": {
+      "defaultDataset": true,
+      "itemsEndpointPattern": "https://api.apify.com/v2/datasets/{defaultDatasetId}/items?format=json&clean=true"
+    },
+    "exampleInvocation": {
+      "method": "POST",
+      "url": "https://api.apify.com/v2/acts/feng0928~coinglass-heatmap/runs",
+      "headers": {
+        "Authorization": "Bearer ${APIFY_TOKEN}",
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "coin": "BTC",
+        "exchange": "Binance",
+        "quoteCurrency": "USDT",
+        "timeRange": "24h",
+        "headless": true
+      }
+    },
+    "conditionalRequirements": [],
+    "conditionalOnlyFields": [],
+    "defaultMode": null,
+    "fieldClassification": {
+      "basicUserFields": [],
+      "userFacingFields": [],
+      "advancedFields": [],
+      "internalFields": [],
+      "highCostFields": [],
+      "conditionalOnlyFields": [],
+      "agentDefaultFields": [],
+      "askOnlyIfNeededFields": []
+    },
+    "agentInteractionPolicy": {
+      "defaultMode": null,
+      "conditionalOnlyFields": [],
+      "defaultAskFields": [],
+      "doNotAskFields": [],
+      "askOnlyIfNeededFields": [],
+      "warnBeforeUsingFields": []
+    },
+    "costSafetyProfile": {
+      "riskLevel": "low",
+      "defaultMode": null,
+      "recommendedTestInput": {},
+      "safeDefaults": {},
+      "highCostFields": [],
+      "agentGuidance": [
+        "Start with a small maxPlaces, maxItems, or maxResults value for test runs.",
+        "Disable review scraping unless explicitly requested.",
+        "Disable website enrichment for first validation runs.",
+        "Use async runs for large jobs."
+      ]
+    },
+    "validationGuidance": {
+      "beforeRun": [
+        "Validate input_schema.json.",
+        "Determine selected mode/action first.",
+        "Apply conditionalRequirements for the selected mode/action.",
+        "Ask for conditionalOnlyFields only when the selected condition requires them.",
+        "Do not ask for placeId during normal search/list workflows.",
+        "Apply safeDefaults for first test runs.",
+        "Do not enable high-cost fields unless user explicitly asks."
+      ]
+    }
+  },
+  "readiness": {
+    "level": "executable",
+    "canRunDirectly": true,
+    "reason": "Actor slug, executable Apify endpoints, and verified input schema were extracted from Apify metadata. Conditional requirements were not inferred and a cost safety profile is available.",
+    "missing": []
+  },
+  "schemaVerified": true,
+  "schemaSource": "apify_actor_metadata",
+  "conditionalRequirements": [],
+  "conditionalOnlyFields": [],
+  "defaultMode": null,
+  "fieldClassification": {
+    "basicUserFields": [],
+    "userFacingFields": [],
+    "advancedFields": [],
+    "internalFields": [],
+    "highCostFields": [],
+    "conditionalOnlyFields": [],
+    "agentDefaultFields": [],
+    "askOnlyIfNeededFields": []
+  },
+  "costSafetyProfile": {
+    "riskLevel": "low",
+    "defaultMode": null,
+    "recommendedTestInput": {},
+    "safeDefaults": {},
+    "highCostFields": [],
+    "agentGuidance": [
+      "Start with a small maxPlaces, maxItems, or maxResults value for test runs.",
+      "Disable review scraping unless explicitly requested.",
+      "Disable website enrichment for first validation runs.",
+      "Use async runs for large jobs."
+    ]
+  },
+  "agentInteractionPolicy": {
+    "defaultMode": null,
+    "conditionalOnlyFields": [],
+    "defaultAskFields": [],
+    "doNotAskFields": [],
+    "askOnlyIfNeededFields": [],
+    "warnBeforeUsingFields": []
+  },
+  "files": {
+    "SKILL.md": "# Coinglass Heatmap\n\nSkill package: `coinglass_heatmap`\n\n## What This Skill Does\n\nCoinglass Heatmap\n\nThis skill is Hermes-ready and designed for Hermes Agent skill workflows. It is also compatible with skill-style agent systems that read markdown instructions, a manifest, and a JSON input schema.\n\n## When To Use It\n\n- Trading analysis: monitor liquidation levels for potential price reversals\n- Market research: track liquidation distribution across different timeframes\n\n## Inputs Expected From Normal Users\n\n- Advanced, internal, and cost-sensitive fields remain available in `input_schema.json`, but the agent should not ask about them by default.\n\n## Output Expected\n\n- `dataset_items` (array) - Items produced by the Apify Actor run.\n\n## Step-By-Step Workflow\n\n1. Read the user's goal and map it to one of the detected capabilities.\n2. Validate required inputs against `input_schema.json`.\n3. Ask for missing required values before making any external call or Actor run.\n4. Execute the documented API, repository tool, or Apify Actor workflow described by the source.\n5. Return a concise summary, structured result data, and any relevant links or dataset references.\n6. For long-running work, report progress and preserve enough context for retry.\n\n## How This Skill Calls The Apify Actor\n\n- Actor slug: `feng0928/coinglass-heatmap`\n- Required secret: `APIFY_TOKEN`\n- Start run endpoint: `https://api.apify.com/v2/acts/feng0928~coinglass-heatmap/runs`\n- Run-sync endpoint: `https://api.apify.com/v2/acts/feng0928~coinglass-heatmap/run-sync-get-dataset-items`\n- Expected result: dataset items from the default dataset\n- Input schema source: `apify_actor_metadata`\n- Readiness level: `executable`\n\n## Before Running\n\n- Verify `APIFY_TOKEN` exists in the agent secret store.\n- Validate user input against `input_schema.json`.\n- Use the run-sync endpoint for small jobs.\n- Use the async run endpoint for larger jobs and then fetch dataset items.\n\n\n## Required And Conditional Inputs\n\nAlways-required fields:\n\n- No always-required fields were confirmed.\n\nConditional requirements depend on the selected mode, action, operation, or task:\n\n- No high-confidence conditional requirements were inferred.\n\n\n## Field Guidance For Agents\n\nBy default, the agent should only ask about agentDefaultFields. Advanced fields should be used only when the user explicitly requests expert control.\n\n### Default Workflow\n\n- Default mode: `not inferred`\n- Ask first: none\n\n### Ask The User First\n\nnone\n\n### Conditional-Only Fields\n\nnone\n\nThese fields are valid and user-facing, but they should not be requested by default. Ask for them only when the user selects a mode, action, or operation that requires them.\n\nApply `conditionalRequirements` before asking for these fields.\n\n### Ask Only If Needed\n\nnone\n\nThese are technical or expert options. Use them only when the user asks for advanced behavior or operational tuning.\n\n### Do Not Ask Normal Users\n\nnone\n\nThese are billing, debug, storage, telemetry, or internal fields. Normal users should not be asked about them.\n\n### Cost-Sensitive Fields\n\nnone\n\nThese can increase runtime, compute, memory use, scraping depth, or external requests. Warn the user before enabling or increasing them.\n\n\n## Cost-Safe Execution\n\n- Risk level: `low`\n- Recommended test input:\n\n```json\n{}\n```\n\n- Safe defaults:\n\n```json\n{}\n```\n\n- High-cost fields: none\n\nAgent guidance:\n\n- Start with a small maxPlaces, maxItems, or maxResults value for test runs.\n- Disable review scraping unless explicitly requested.\n- Disable website enrichment for first validation runs.\n- Use async runs for large jobs.\n\n\n## Error Handling\n\n- If an input is missing or ambiguous, ask a targeted follow-up question.\n- If the source API or Actor returns a validation error, explain the failing field and suggest a corrected input.\n- If rate limits or transient network errors occur, retry once with backoff and then report the failure clearly.\n- If the source documentation is incomplete, state the assumption and keep raw response details visible.\n\n## Safety And Rate-Limit Notes\n\n- Respect the terms, robots policies, and rate limits of the source service.\n- Do not expose API keys, Apify tokens, or personal data in logs or final answers.\n- Prefer small test runs before large scraping or API jobs.\n- Avoid browser rendering unless the workflow explicitly requires it.\n\n## Example User Commands\n\n- \"Use `coinglass_heatmap` to run the default workflow for this source.\"\n- \"Generate a request for `coinglass_heatmap` using these parameters: ...\"\n- \"Validate this `coinglass_heatmap` input before running it.\"\n- \"Retry the failed `coinglass_heatmap` operation and explain what changed.\"\n\n## Integration Notes For Hermes Agent\n\nCopy this folder into your Hermes Agent skills directory. Keep `SKILL.md`, `manifest.json`, and `input_schema.json` together so the agent can load the instructions and validate user input.\n",
+    "manifest.json": "{\n  \"name\": \"coinglass_heatmap\",\n  \"version\": \"1.0.0\",\n  \"target\": \"hermes\",\n  \"source_url\": \"https://apify.com/feng0928/coinglass-heatmap\",\n  \"description\": \"Coinglass Heatmap\",\n  \"capabilities\": [\n    \"Trading analysis: monitor liquidation levels for potential price reversals\",\n    \"Market research: track liquidation distribution across different timeframes\"\n  ],\n  \"inputs\": [\n    {\n      \"name\": \"coin\",\n      \"type\": \"string\",\n      \"description\": \"Cryptocurrency symbol (e.g., BTC, ETH, SOL)\",\n      \"required\": false,\n      \"default\": \"BTC\"\n    },\n    {\n      \"name\": \"exchange\",\n      \"type\": \"string\",\n      \"description\": \"Exchange name\",\n      \"required\": false,\n      \"default\": \"Binance\"\n    },\n    {\n      \"name\": \"quoteCurrency\",\n      \"type\": \"string\",\n      \"description\": \"Quote currency for the trading pair\",\n      \"required\": false,\n      \"default\": \"USDT\"\n    },\n    {\n      \"name\": \"timeRange\",\n      \"type\": \"string\",\n      \"description\": \"Time range for the heatmap\",\n      \"required\": false,\n      \"default\": \"24h\"\n    },\n    {\n      \"name\": \"headless\",\n      \"type\": \"boolean\",\n      \"description\": \"Run browser in headless mode\",\n      \"required\": false,\n      \"default\": true\n    }\n  ],\n  \"outputs\": [\n    {\n      \"name\": \"dataset_items\",\n      \"type\": \"array\",\n      \"description\": \"Items produced by the Apify Actor run.\",\n      \"required\": false,\n      \"default\": null\n    }\n  ],\n  \"generated_by\": \"Hermes Skill Builder for Apify & APIs\",\n  \"readiness\": {\n    \"level\": \"executable\",\n    \"canRunDirectly\": true,\n    \"reason\": \"Actor slug, executable Apify endpoints, and verified input schema were extracted from Apify metadata. Conditional requirements were not inferred and a cost safety profile is available.\",\n    \"missing\": []\n  },\n  \"tool_call_contract\": \"tool_call_contract.json\",\n  \"schema_verified\": true,\n  \"source_metadata_type\": \"apify_api\",\n  \"conditionalRequirements\": [],\n  \"conditionalOnlyFields\": [],\n  \"defaultMode\": null,\n  \"fieldClassification\": {\n    \"basicUserFields\": [],\n    \"userFacingFields\": [],\n    \"advancedFields\": [],\n    \"internalFields\": [],\n    \"highCostFields\": [],\n    \"conditionalOnlyFields\": [],\n    \"agentDefaultFields\": [],\n    \"askOnlyIfNeededFields\": []\n  },\n  \"agentInteractionPolicy\": {\n    \"defaultMode\": null,\n    \"conditionalOnlyFields\": [],\n    \"defaultAskFields\": [],\n    \"doNotAskFields\": [],\n    \"askOnlyIfNeededFields\": [],\n    \"warnBeforeUsingFields\": []\n  },\n  \"costSafetyProfile\": {\n    \"riskLevel\": \"low\",\n    \"defaultMode\": null,\n    \"recommendedTestInput\": {},\n    \"safeDefaults\": {},\n    \"highCostFields\": [],\n    \"agentGuidance\": [\n      \"Start with a small maxPlaces, maxItems, or maxResults value for test runs.\",\n      \"Disable review scraping unless explicitly requested.\",\n      \"Disable website enrichment for first validation runs.\",\n      \"Use async runs for large jobs.\"\n    ]\n  }\n}",
+    "input_schema.json": "{\n  \"title\": \"Coinglass Heatmap Input\",\n  \"type\": \"object\",\n  \"schemaVersion\": 1,\n  \"properties\": {\n    \"coin\": {\n      \"title\": \"Coin Symbol\",\n      \"type\": \"string\",\n      \"description\": \"Cryptocurrency symbol (e.g., BTC, ETH, SOL)\",\n      \"default\": \"BTC\",\n      \"editor\": \"textfield\"\n    },\n    \"exchange\": {\n      \"title\": \"Exchange\",\n      \"type\": \"string\",\n      \"description\": \"Exchange name\",\n      \"default\": \"Binance\",\n      \"enum\": [\n        \"Binance\",\n        \"OKX\",\n        \"Bybit\",\n        \"Bitget\",\n        \"MEXC\",\n        \"Gate\",\n        \"HTX\",\n        \"Hyperliquid\",\n        \"BingX\",\n        \"Deribit\",\n        \"Bitfinex\",\n        \"KuCoin\",\n        \"Bitmex\",\n        \"Kraken\",\n        \"Coinbase\",\n        \"CoinEx\",\n        \"dYdX\",\n        \"WhiteBIT\",\n        \"LBank\",\n        \"Bitunix\",\n        \"Crypto.com\"\n      ],\n      \"editor\": \"select\"\n    },\n    \"quoteCurrency\": {\n      \"title\": \"Quote Currency\",\n      \"type\": \"string\",\n      \"description\": \"Quote currency for the trading pair\",\n      \"default\": \"USDT\",\n      \"enum\": [\n        \"USDT\",\n        \"USD\",\n        \"USDC\"\n      ],\n      \"editor\": \"select\"\n    },\n    \"timeRange\": {\n      \"title\": \"Time Range\",\n      \"type\": \"string\",\n      \"description\": \"Time range for the heatmap\",\n      \"default\": \"24h\",\n      \"enum\": [\n        \"12h\",\n        \"24h\",\n        \"48h\",\n        \"3d\",\n        \"1w\",\n        \"2w\",\n        \"1m\",\n        \"3m\",\n        \"6m\",\n        \"1y\"\n      ],\n      \"enumTitles\": [\n        \"12 Hours\",\n        \"24 Hours\",\n        \"48 Hours\",\n        \"3 Days\",\n        \"1 Week\",\n        \"2 Weeks\",\n        \"1 Month\",\n        \"3 Months\",\n        \"6 Months\",\n        \"1 Year\"\n      ],\n      \"editor\": \"select\"\n    },\n    \"headless\": {\n      \"title\": \"Headless Mode\",\n      \"type\": \"boolean\",\n      \"description\": \"Run browser in headless mode\",\n      \"default\": true,\n      \"editor\": \"checkbox\"\n    }\n  },\n  \"required\": [],\n  \"$schema\": \"https://json-schema.org/draft/2020-12/schema\",\n  \"additionalProperties\": true,\n  \"x_schema_source\": \"apify_actor_metadata\",\n  \"x_verified\": true\n}",
+    "tool_call_contract.json": "{\n  \"platform\": \"apify\",\n  \"actorSlug\": \"feng0928/coinglass-heatmap\",\n  \"apiActorId\": \"feng0928~coinglass-heatmap\",\n  \"runEndpoint\": \"https://api.apify.com/v2/acts/feng0928~coinglass-heatmap/runs\",\n  \"runSyncEndpoint\": \"https://api.apify.com/v2/acts/feng0928~coinglass-heatmap/run-sync-get-dataset-items\",\n  \"requiresSecret\": \"APIFY_TOKEN\",\n  \"inputSchemaSource\": \"apify_actor_metadata\",\n  \"resultHandling\": {\n    \"defaultDataset\": true,\n    \"itemsEndpointPattern\": \"https://api.apify.com/v2/datasets/{defaultDatasetId}/items?format=json&clean=true\"\n  },\n  \"exampleInvocation\": {\n    \"method\": \"POST\",\n    \"url\": \"https://api.apify.com/v2/acts/feng0928~coinglass-heatmap/runs\",\n    \"headers\": {\n      \"Authorization\": \"Bearer ${APIFY_TOKEN}\",\n      \"Content-Type\": \"application/json\"\n    },\n    \"body\": {\n      \"coin\": \"BTC\",\n      \"exchange\": \"Binance\",\n      \"quoteCurrency\": \"USDT\",\n      \"timeRange\": \"24h\",\n      \"headless\": true\n    }\n  },\n  \"conditionalRequirements\": [],\n  \"conditionalOnlyFields\": [],\n  \"defaultMode\": null,\n  \"fieldClassification\": {\n    \"basicUserFields\": [],\n    \"userFacingFields\": [],\n    \"advancedFields\": [],\n    \"internalFields\": [],\n    \"highCostFields\": [],\n    \"conditionalOnlyFields\": [],\n    \"agentDefaultFields\": [],\n    \"askOnlyIfNeededFields\": []\n  },\n  \"agentInteractionPolicy\": {\n    \"defaultMode\": null,\n    \"conditionalOnlyFields\": [],\n    \"defaultAskFields\": [],\n    \"doNotAskFields\": [],\n    \"askOnlyIfNeededFields\": [],\n    \"warnBeforeUsingFields\": []\n  },\n  \"costSafetyProfile\": {\n    \"riskLevel\": \"low\",\n    \"defaultMode\": null,\n    \"recommendedTestInput\": {},\n    \"safeDefaults\": {},\n    \"highCostFields\": [],\n    \"agentGuidance\": [\n      \"Start with a small maxPlaces, maxItems, or maxResults value for test runs.\",\n      \"Disable review scraping unless explicitly requested.\",\n      \"Disable website enrichment for first validation runs.\",\n      \"Use async runs for large jobs.\"\n    ]\n  },\n  \"validationGuidance\": {\n    \"beforeRun\": [\n      \"Validate input_schema.json.\",\n      \"Determine selected mode/action first.\",\n      \"Apply conditionalRequirements for the selected mode/action.\",\n      \"Ask for conditionalOnlyFields only when the selected condition requires them.\",\n      \"Do not ask for placeId during normal search/list workflows.\",\n      \"Apply safeDefaults for first test runs.\",\n      \"Do not enable high-cost fields unless user explicitly asks.\"\n    ]\n  }\n}",
+    "examples.md": "# Examples For `coinglass_heatmap`\n\n## Low-Cost Test Examples\n\n- Run a low-cost test with 5 coffee shops in Berlin and no reviews.\n\n## Normal User Examples\n\n- Use `coinglass_heatmap` for trading analysis: monitor liquidation levels for potential price reversals.\n- Prepare a valid input for `coinglass_heatmap` using the real field names from `input_schema.json`.\n- Run a normal workflow with `coin` set to a realistic target.\n\n## Advanced Examples\n\n- Chain `coinglass_heatmap` after a planning step and only run it once required inputs are present.\n- Compare two possible `coinglass_heatmap` configurations and recommend the lower-cost option.\n\n## Conditional Examples\n\n- Ask for mode-specific fields only after the mode or action is selected.\n\n## Validation And Error Examples\n\n- If the API returns a validation error, identify the invalid field, correct the JSON, and retry once.\n- If the first run times out, reduce scope, preserve the original goal, and retry with safer limits.\n\n## Example JSON Input\n\n```json\n{\n  \"coin\": \"BTC\",\n  \"exchange\": \"Binance\",\n  \"quoteCurrency\": \"USDT\",\n  \"timeRange\": \"24h\",\n  \"headless\": true\n}\n```\n",
+    "test_prompts.md": "# Test Prompts For `coinglass_heatmap`\n\n## Basic Sanity Tests\n\n1. Load `coinglass_heatmap` and summarize what it does.\n2. Create a minimal valid input using `coin` and `exchange`.\n3. Explain the expected output fields without running the workflow.\n\n## Input Validation Tests\n\n1. Try an empty input and ask for missing required fields.\n2. Pass a wrong type for the first known field and explain the correction.\n3. Include an unknown optional field and decide whether it can be safely ignored.\n\n## Edge Case Prompts\n\n1. The source service is rate limited. Describe the retry behavior.\n2. The documentation does not specify an output schema. Return the safest structured response.\n3. The user asks for a very large run. Recommend a small validation run first.\n\n## Expected Behavior\n\nThe agent should validate inputs, avoid leaking secrets, use the source workflow conservatively, and return a clear summary plus structured output.\n",
+    "integration_notes.md": "# Integration Notes For `coinglass_heatmap`\n\n## How To Use With Hermes Agent\n\n1. Create a folder named `coinglass_heatmap` in your Hermes Agent skills directory.\n2. Place `SKILL.md`, `manifest.json`, `input_schema.json`, `tool_call_contract.json`, `examples.md`, and `test_prompts.md` in that folder.\n3. Restart or refresh the agent skill loader.\n4. Test with the prompts in `test_prompts.md` before using the skill for production work.\n\n## Source\n\n- Source URL: https://apify.com/feng0928/coinglass-heatmap\n- Source type: apify_actor\n- Generated by: Hermes Skill Builder for Apify & APIs\n\n## Endpoint Or Operation Summary\n\n- Start run: https://api.apify.com/v2/acts/feng0928~coinglass-heatmap/runs\n- Run synchronously and return dataset items: https://api.apify.com/v2/acts/feng0928~coinglass-heatmap/run-sync-get-dataset-items\n- Dataset items: https://api.apify.com/v2/datasets/{defaultDatasetId}/items?format=json&clean=true\n\n## Apify Token And Input Handling\n\n- Store the Apify API token as `APIFY_TOKEN` in Hermes Agent or the host agent's secret store.\n- Pass validated user input directly as the JSON body for `https://api.apify.com/v2/acts/feng0928~coinglass-heatmap/runs`.\n- For quick tests, POST to `https://api.apify.com/v2/acts/feng0928~coinglass-heatmap/run-sync-get-dataset-items` and return the dataset items response.\n- For larger jobs, POST to `https://api.apify.com/v2/acts/feng0928~coinglass-heatmap/runs`, wait for completion, then fetch `https://api.apify.com/v2/datasets/{defaultDatasetId}/items?format=json&clean=true` with the returned `defaultDatasetId`.\n- Do not print or store the raw `APIFY_TOKEN` in conversation logs.\n\n\n## Default Agent Behavior\n\n- Default mode: `not inferred`\n- Ask only for these fields during normal use: none\n- Do not expose these fields in normal conversation: none\n- Use these fields only for expert users or explicit requests: none\n- Conditional-only fields: none\n- Apply `safeDefaults` before the first test run.\n- Warn the user before enabling or increasing these fields: none\n\n\n\n\n## Agent Execution Safety\n\n- Start with `recommendedTestInput` from `tool_call_contract.json`.\n- Validate conditional requirements before calling the Actor.\n- Avoid high-cost fields unless the user explicitly requests deep scraping, reviews, browser work, or enrichment.\n- Use the run-sync endpoint only for small jobs.\n- Use the async run endpoint for larger jobs.\n\n\n\n\n## Known Limitations\n\n- Could not infer conditional requirements from the schema with high confidence.\n- Could not build a complete recommendedTestInput. Manual input review is required.\n- The input schema was extracted from Apify Actor metadata. Review conditional requirements described in the Actor README before large runs.\n- This package is Hermes-ready but is not an official Hermes integration.\n\n## Adapting For Other Agents\n\nUse `SKILL.md` as the instruction file, `manifest.json` as package metadata, and `input_schema.json` as the validation contract. Other agent systems can rename these files as needed while preserving their contents.\n"
+  },
+  "zipKeyValueStoreUrl": "key-value-store://default/coinglass_heatmap.zip",
+  "warnings": [
+    "Could not infer conditional requirements from the schema with high confidence.",
+    "Could not build a complete recommendedTestInput. Manual input review is required."
+  ],
+  "monetizationEvents": [
+    "source-analyzed",
+    "skill-generated",
+    "schema-generated",
+    "tool-contract-generated",
+    "zip-exported"
+  ]
+}]
